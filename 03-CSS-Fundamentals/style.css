@@ -112,10 +112,36 @@ li:nth-child(even) {
 }
 
 /* 親のarticleからみて最初のelementがpの時、selectされる。articleから見て最初のpがselectされるわけではないのに注意 */
-/* article p:first-child {
+article p:first-child {
+  color: red;
+}
+
+/* article p:last-child {
   color: red;
 } */
 
-article p:last-child {
-  color: red;
+/* Styling links */
+/* aだけだとhrefのない要素もselectされる。a:linkでhrefを持つ要素をselect。 */
+/* LVHAの順に記述しないと期待通りに作動しないことがあるので注意 */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  /* color: #777; */
+  /* 通常:visitedは、link pseudoと一緒にする */
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+/* click中のstyle */
+a:active {
+  background-color: black;
+  font-style: italic;
 }
