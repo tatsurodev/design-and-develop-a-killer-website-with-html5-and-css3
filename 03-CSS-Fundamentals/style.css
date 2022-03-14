@@ -5,6 +5,14 @@ h4,
 p,
 li {
   font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  /* 色指定には、hexadecimal notation(16進法(0-fで16))とrgb/rgba notationがある。通常は、hexを使い、透過が必要な時にrgbaを使用。red, green, blueの全値が等しい時はgray colorとなる。rgb(0, 0, 0)で黒、rgb(255, 255, 255)で白 */
+  color: #1098ad;
 }
 
 h1 {
@@ -68,4 +76,19 @@ li {
 
 .related {
   list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+/* page全体の背景色 */
+body {
+  /* background-color: orangered; */
 }
