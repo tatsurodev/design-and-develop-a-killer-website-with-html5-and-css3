@@ -92,3 +92,30 @@ aside {
 body {
   /* background-color: orangered; */
 }
+
+/* 擬似クラス (pseudo-classes */
+/* .first-li {
+  font-weight: bold;
+} */
+/* child系疑似クラス、親要素からみて、n番目の要素がselectorで指定させた要素だった時、selectされる。下記は、最初の子がliの時その要素がselectされる。最初に出現するliがselectされるわけではないので注意。 */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* 引数にnumber, odd, even */
+li:nth-child(even) {
+  /* color: red; */
+}
+
+/* 親のarticleからみて最初のelementがpの時、selectされる。articleから見て最初のpがselectされるわけではないのに注意 */
+/* article p:first-child {
+  color: red;
+} */
+
+article p:last-child {
+  color: red;
+}
