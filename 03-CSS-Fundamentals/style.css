@@ -1,11 +1,15 @@
-h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
+/* *はinheritが働かないのでinheritされないpropertyを指定するとよい。 */
+* {
+  /* border-top: 10px solid #1098ad; */
+}
+
+/* bodyは、inheritが働くのでinheritされるpropertyを指定するとよい。 */
+body {
+  /* text系のpropertyは大概親からinheritされる */
   color: #444;
+  font-family: sans-serif;
+  /* margin, padding, border系はinheritされない */
+  border-top: 10px solid #1098ad;
 }
 
 h1,
@@ -163,3 +167,13 @@ a:active {
 footer p {
   color: green !important;
 } */
+
+/* bodyのように大きい範囲でなく小さな範囲に限定してinheritさせることもできる */
+/* nav a:link,
+nav p {
+  font-size: 18px;
+} */
+
+nav {
+  font-size: 18px;
+}
