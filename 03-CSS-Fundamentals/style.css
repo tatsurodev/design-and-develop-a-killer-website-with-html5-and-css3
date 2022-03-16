@@ -24,6 +24,8 @@ body {
   padding: 20px 40px;
   /* verticalなmarginを作る時は、topかbottomかで統一すること。bottomが直感的でわかりやすい */
   margin-bottom: 60px;
+  /* 垂直的にcenterizeされない */
+  height: 80px;
 }
 
 nav {
@@ -45,6 +47,7 @@ aside {
   /* padding-top: 50px;
   padding-bottom: 50px; */
   padding: 50px 0;
+  width: 500px;
 }
 
 h1,
@@ -188,6 +191,13 @@ a:hover {
 a:active {
   background-color: black;
   font-style: italic;
+}
+
+.post-img {
+  /* %で指定した時は、親要素に対しての%になる */
+  width: 100%;
+  /* htmlの属性でwidth, heightが指定されている時のみ、そのaspect ratioをfixするためにautoが必要。cssでwidth, heightのどちらかのみ指定されている時はdefaultがautoなので不要。 */
+  height: auto;
 }
 
 /* Resolving conflicts, 優先順位高い順 */
