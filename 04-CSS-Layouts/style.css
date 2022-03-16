@@ -1,0 +1,303 @@
+/* *はinheritが働かないのでinheritされないpropertyを指定するとよい。 */
+* {
+  /* border-top: 10px solid #1098ad; */
+  /* 全要素がdefaultのmargin, paddingがあるとstylingが困難なのでreset */
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE SECTIONS */
+/* bodyは、inheritが働くのでinheritされるpropertyを指定するとよい。 */
+body {
+  /* text系のpropertyは大概親からinheritされる */
+  color: #444;
+  font-family: sans-serif;
+  /* margin, padding, border系はinheritされない */
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+
+/* block要素のcenteringには親要素が幅を持っていることが必須なのでpage全体にwidthを持たせる */
+.container {
+  width: 700px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+  /* position: relative; */
+}
+/* chromeのdevtoolsでは青がcontent, 緑がpadding, 赤がmargin */
+.main-header {
+  background-color: #f7f7f7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  padding: 20px 40px;
+  /* verticalなmarginを作る時は、topかbottomかで統一すること。bottomが直感的でわかりやすい */
+  margin-bottom: 60px;
+  /* 垂直的にcenterizeされない */
+  /* height: 80px; */
+}
+
+nav {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+  /* position: relative; */
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding: 50px 0;
+  width: 500px;
+}
+
+/* SMALLER ELEMENTS */
+h1,
+h2,
+h3 {
+  /* 色指定には、hexadecimal notation(16進法(0-fで16))とrgb/rgba notationがある。通常は、hexを使い、透過が必要な時にrgbaを使用。red, green, blueの全値が等しい時はgray colorとなる。rgb(0, 0, 0)で黒、rgb(255, 255, 255)で白 */
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  /* 単位なしで指定することでfont-sizeに対する倍率 */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  /* browserのdefault font-sizeは16px */
+  font-size: 20px;
+  margin-bottom: 10px;
+  /* display: inline; */
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* descendant selector, 子孫 */
+/* footer p {
+  font-size: 16px;
+} */
+
+/* htmlの構造に依存してしまうためbetterな書き方ではない */
+/* article header p {
+  font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ul {
+  list-style: none;
+} */
+
+.related {
+  list-style: none;
+}
+
+/* page全体の背景色 */
+body {
+  /* background-color: orangered; */
+}
+
+/* 擬似クラス (pseudo-classes */
+/* .first-li {
+  font-weight: bold;
+} */
+/* child系疑似クラス、親要素からみて、n番目の要素がselectorで指定させた要素だった時、selectされる。下記は、最初の子がliの時その要素がselectされる。最初に出現するliがselectされるわけではないので注意。 */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* 引数にnumber, odd, even */
+li:nth-child(even) {
+  /* color: red; */
+}
+
+/* 親のarticleからみて最初のelementがpの時、selectされる。articleから見て最初のpがselectされるわけではないのに注意 */
+article p:first-child {
+  color: red;
+}
+
+/* article p:last-child {
+  color: red;
+} */
+
+/* Styling links */
+/* aだけだとhrefのない要素もselectされる。a:linkでhrefを持つ要素をselect。 */
+/* LVHAの順に記述しないと期待通りに作動しないことがあるので注意 */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  /* color: #777; */
+  /* 通常:visitedは、link pseudoと一緒にする */
+  color: #1098ad;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline orangered;
+}
+
+/* click中のstyle */
+a:active {
+  background-color: black;
+  font-style: italic;
+}
+
+.post-img {
+  /* %で指定した時は、親要素に対しての%になる */
+  width: 100%;
+  /* htmlの属性でwidth, heightが指定されている時のみ、そのaspect ratioをfixするためにautoが必要。cssでwidth, heightのどちらかのみ指定されている時はdefaultがautoなので不要。 */
+  height: auto;
+}
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+  display: block; */
+
+  /* 垂直方向のmarginを効かせるには、block elementかinline-block elementにする必要あり */
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* pseudo classはchain可 */
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+
+  /* 親要素へposition指定がない時は、viewportに対してのpositionになる */
+  /* 最初にposition:relativeに指定された先祖が基準になる、今回はbody */
+  position: absolute;
+  /* top: 50px;
+  left: 50px; */
+  bottom: 50px;
+  right: 50px;
+}
+
+/* :: pseudo element, 疑似要素 */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* adjacent sibling, 隣接selector */
+h3 + p::first-line {
+  color: red;
+}
+
+h2 {
+  /* background-color: orangered; */
+  position: relative;
+}
+
+/* before: selectされた要素の最初の小要素として追加 */
+/* after: selectされた要素位最後の小要素として追加 */
+/* 子要素にposition: absoluteを指定しているのでbeforeでもafterでも一緒 */
+h2::before {
+  /* 必須 */
+  content: 'TOP';
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  /* pseudo elementはinline elementなので、width, height, padding, margin等の効くbox modelにしたい時は、diplay: block, inline-blockに指定する必要あり  */
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+/* Resolving conflicts, 優先順位高い順 */
+/* !important -> inline -> id -> class, pseudo class(., :) -> element, pseudo element(::) -> * -> inherited styles */
+/* #copyright {
+  color: red;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green !important;
+} */
+
+/* bodyのように大きい範囲でなく小さな範囲に限定してinheritさせることもできる */
+/* nav a:link,
+nav p {
+  font-size: 18px;
+} */
