@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+/* PAGE SECTIONS */
 /* bodyは、inheritが働くのでinheritされるpropertyを指定するとよい。 */
 body {
   /* text系のpropertyは大概親からinheritされる */
@@ -32,7 +33,7 @@ body {
   /* verticalなmarginを作る時は、topかbottomかで統一すること。bottomが直感的でわかりやすい */
   margin-bottom: 60px;
   /* 垂直的にcenterizeされない */
-  height: 80px;
+  /* height: 80px; */
 }
 
 nav {
@@ -57,6 +58,7 @@ aside {
   width: 500px;
 }
 
+/* SMALLER ELEMENTS */
 h1,
 h2,
 h3 {
@@ -104,6 +106,7 @@ li {
   /* browserのdefault font-sizeは16px */
   font-size: 20px;
   margin-bottom: 10px;
+  /* display: inline; */
 }
 
 li:last-child {
@@ -205,6 +208,23 @@ a:active {
   width: 100%;
   /* htmlの属性でwidth, heightが指定されている時のみ、そのaspect ratioをfixするためにautoが必要。cssでwidth, heightのどちらかのみ指定されている時はdefaultがautoなので不要。 */
   height: auto;
+}
+
+nav a:link {
+  /* background-color: orangered;
+  margin: 20px;
+  padding: 20px;
+  display: block; */
+
+  /* 垂直方向のmarginを効かせるには、block elementかinline-block elementにする必要あり */
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* pseudo classはchain可 */
+nav a:link:last-child {
+  margin-right: 0;
 }
 
 /* Resolving conflicts, 優先順位高い順 */
