@@ -28,6 +28,7 @@ body {
 /* chromeのdevtoolsでは青がcontent, 緑がpadding, 赤がmargin */
 .main-header {
   background-color: #f7f7f7;
+  background-color: red;
   /* padding: 20px;
   padding-left: 40px;
   padding-right: 40px; */
@@ -321,4 +322,17 @@ h1 {
 
 nav {
   float: right;
+}
+
+/* clearfix */
+.clear {
+  clear: both;
+}
+
+/* floatする要素の後ろにclearしたblock elementを追加して高さを出す、beforeだと失敗 */
+.clearfix::after {
+  clear: both;
+  content: '';
+  /* clearはblock level elementにしか効かないのでblockかinline-blockに指定 */
+  display: block;
 }

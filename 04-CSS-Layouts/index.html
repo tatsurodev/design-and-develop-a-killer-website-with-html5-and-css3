@@ -18,7 +18,9 @@
 
     <div class="container">
       <!-- 導入的なcontentをまとめる、複数設置しておｋ。headerの小要素にheader, footerは含めない。 -->
-      <header class="main-header">
+      <header class="main-header clearfix">
+        <!-- floatする要素の前にclearする要素を追加してもうまくいかない -->
+        <!-- <div class="clear"></div> -->
         <!-- h1は通常各pageに1つがbetter。 -->
         <h1>📘 The Code Magazine</h1>
         <nav>
@@ -29,6 +31,8 @@
           <a href="#">Flexbox</a>
           <a href="#">CSS Grid</a>
         </nav>
+        <!-- floatする要素の後にclearする要素をついか -->
+        <!-- <div class="clear"></div> -->
       </header>
 
       <article>
