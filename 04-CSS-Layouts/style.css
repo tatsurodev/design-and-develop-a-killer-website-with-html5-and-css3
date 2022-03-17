@@ -301,3 +301,24 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+
+/* FLOAT */
+.author-img {
+  float: left;
+}
+
+.author {
+  /* padding-left: 80px; */
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* .main-headerのh1とnavの両方がfloatすると高さがなくなる(collapsing heights)ので注意。background-colorが付いているのはpadding分 */
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
