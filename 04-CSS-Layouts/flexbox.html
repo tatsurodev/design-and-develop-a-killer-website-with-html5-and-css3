@@ -37,7 +37,7 @@
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
-        font-size: 30px;
+        font-size: 32px;
         margin: 40px;
 
         /* FLEXBOX */
@@ -45,7 +45,27 @@
         display: flex;
         /* align-itemsの初期値はstrechなのでcontentのspace以上に垂直方向にstrechする。他の値を指定すると必要なspaceのみになる */
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 30px;
+      }
+
+      .el {
+        /* margin-right: 30px; */
+      }
+
+      .el--1 {
+        /* flex containerのalign-itemsよりflex itemのalign-selfが優先される */
+        align-self: flex-start;
+        /* order: 2; */
+      }
+
+      .el--5 {
+        align-self: stretch;
+        order: 1;
+      }
+
+      .el--6 {
+        order: -1;
       }
     </style>
   </head>
@@ -57,8 +77,8 @@
       <div class="el el--4">are</div>
       <div class="el el--5">amazing</div>
       <div class="el el--6">languages</div>
-      <div class="el el--7">to</div>
-      <div class="el el--8">learn</div>
+      <!-- <div class="el el--7">to</div>
+      <div class="el el--8">learn</div> -->
     </div>
   </body>
 </html>
